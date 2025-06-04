@@ -130,5 +130,45 @@
       This project reflects my approach to design that balances clarity, emotional resonance, and brand identity—creating not just a useful tool, but an experience of orientation and belonging.
     </p>
   </div>
+  <a href="https://yejilee0307.github.io/atc_thirdpage/thirdpage.html" class="scroll-return" id="returnBtn">← Return</a>
+
+<style>
+  .scroll-return {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+    background-color: #f3f3f3;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: 2px solid #aaa;
+    font-size: 0.95rem;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .scroll-return.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  let lastScrollTop = 0;
+  const returnBtn = document.getElementById("returnBtn");
+
+  window.addEventListener("scroll", function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      returnBtn.classList.add("hidden");
+    } else {
+      returnBtn.classList.remove("hidden");
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  }, false);
+</script>
 </body>
 </html>
